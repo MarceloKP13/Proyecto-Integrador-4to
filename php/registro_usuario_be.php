@@ -14,7 +14,7 @@
     if($ejecutar){
         echo '
         <script> 
-            alert("Usuario Registrado");
+            alert("Usuario Registrado con Exito");
             window.location = "../index.php";
             </script>
             ';
