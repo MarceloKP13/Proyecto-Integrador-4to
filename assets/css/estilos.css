@@ -126,6 +126,24 @@ main {
     display: none;
 }
 
+.contenedor_contrasena{
+    position: relative;
+}
+
+.eye_icon{
+    position: absolute;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: #353030;
+}
+
+.eye_icon:hover{
+    color: #a36dc2e5;
+}
+
 /*Adaptable para dispositivos móviles*/
 
 @media screen and (max-width: 850px) {

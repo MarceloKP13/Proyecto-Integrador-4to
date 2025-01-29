@@ -5,7 +5,6 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/estilos.css">
     <title>HAVCANA - Iniciar Sesión</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -34,26 +34,33 @@
             </div>
 
             <div class="contenedor__login-register">
-
+                <!-- Formulario de Login -->
                 <form action="php/login_usuario_be.php" method="POST" class="formulario__login">
                     <h2>Iniciar Sesión</h2>
-                    <input type="text" placeholder="Correo electrónico" name ="correo">
-                    <input type="password" placeholder="Contraseña" name ="contrasena">
+                    <input type="text" placeholder="Correo electrónico" name="correo">
+                    <div class="contenedor_contrasena">
+                        <input type="password" placeholder="Contraseña" name="contrasena" id="contrasena_login">
+                        <span id="eye_icon_login" class="eye_icon fas fa-eye"></span>
+                    </div>
                     <button>Entrar</button>
                 </form>
 
-                <form action="php/registro_usuario_be.php" method = "POST" class="formulario__register">
-                <h2>Regístrarse</h2>
-                <input type="text" placeholder="Nombre Completo" name="nombre_completo">
-                <input type="email" placeholder="Correo electrónico" name ="correo">
-                <input type="text" placeholder="Usuario" name = "usuario">
-                <input type="password" placeholder="Contraseña" name = "contrasena">
-                <button>Registrarse</button>
+                <!-- Formulario de Registro -->
+                <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
+                    <h2>Regístrarse</h2>
+                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
+                    <input type="email" placeholder="Correo electrónico" name="correo">
+                    <input type="text" placeholder="Usuario" name="usuario">
+                    <div class="contenedor_contrasena">
+                        <input type="password" placeholder="Contraseña" name="contrasena" id="contrasena_register">
+                        <span id="eye_icon_register" class="eye_icon fas fa-eye"></span>
+                    </div>
+                    <button>Registrarse</button>
                 </form>
             </div>
         </div>
-
     </main>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
