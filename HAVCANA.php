@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    if(!iseet($_SESSION['usuario'])){
+    if(!isset($_SESSION['usuario'])){
         echo '
             <script>
                 alert("Por favor debes iniciar sesión");
