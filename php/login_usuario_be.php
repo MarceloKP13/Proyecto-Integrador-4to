@@ -8,14 +8,21 @@ $contrasena = hash('sha512', $contrasena);
 
 $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo' AND contrasena = '$contrasena'");
 if (mysqli_num_rows($validar_login) > 0) {
-    $_SESSION['usuario'] = $correo;
-    header("location: ../HAVCANA.php");
+    $usuario = mysqli_fetch_assoc($validar_login);
+    $_SESSION['usuario'] = $usuario['usuario'];
+    $_SESSION['es_admin'] = $usuario['es_admin'];
+    
+    if ($usuario['es_admin'] == 1) {
+        header("location: ../index.php"); // Redirigir a la página de administrador
+    } else {
+        header("location: ../index.php"); // Redirigir a la página principal
+    }
     exit;
 } else {
     echo '
         <script>
             alert("Datos incorrectos, verificar registro.");
-            window.location = "../index.php";
+            window.location = "login_registro_global.php";
         </script>
     ';
     exit;

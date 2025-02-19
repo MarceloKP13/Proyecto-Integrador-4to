@@ -1,0 +1,145 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(../imagenes/deg3.png);
+    background-size: cover; 
+    color: #000000; 
+}
+
+header {
+    position: relative;
+    width: 100%;
+    background-color: #660030;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    text-align: center;
+}
+
+header .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FFF4E6;
+}
+
+header .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header .perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+header .perfil img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+/* Estilo para el nav y menú hamburguesa */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #660030;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFF4E6;
+    font-size: 16px;
+}
+
+/* Cambiar color al pasar el mouse por encima */
+nav ul li a:hover {
+    color: #D8B5B0; /* Tono pastel de vino rosado */
+}
+
+/* Estilos para el menú hamburguesa */
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.navbar-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #FFF4E6;
+    margin: 5px;
+}
+
+header .perfil {
+    display: flex;
+    margin-right: 30px;
+}
+
+/* Estilo para el botón de contacto */
+button.contacto {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25D366; /* Violeta pastel */
+    color: #FFF4E6;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    max-width: 100%;
+    width: auto;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Imagen del ícono de WhatsApp  */
+button.contacto img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}

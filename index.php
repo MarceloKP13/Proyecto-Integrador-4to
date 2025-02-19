@@ -1,66 +1,108 @@
 <?php
-    session_start();
-    if(isset($_SESSION['usuario'])){
-        header("location: HAVCANA.php");
-    }
+session_start();
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/imagenes/havcanalogo.png">
-    <link rel="stylesheet" href="assets/css/estilos.css">
-    <title>HAVCANA - Iniciar Sesión</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>HAVCANA</title>
+    <link rel="stylesheet" href="assets/css/estilo-pagina.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
 </head>
 <body>
-
-    <main>
-        <div class="contenedor__todo">
-            <div class="caja__trasera">
-                <div class="caja__trasera-login">
-                    <h3>¿Ya tienes una cuenta?</h3>
-                    <p>Inicia sesión para entrar en la página</p>
-                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
-                </div>
-                <div class="caja__trasera-register">
-                    <h3>¿Aún no tienes cuenta?</h3>
-                    <p>Registrate para que puedas iniciar sesión</p>
-                    <button id="btn__registrarse">Registrarse</button>
-                </div>
+    <!-- Header con Logo y Barra de Navegación -->
+    <header>
+        <a href="infohavcana.html" class="logo-link">
+            <div class="logo">
+                <img src="assets/imagenes/havcanalogo.png" alt="Logo de HAVCANA"> <!-- Aquí coloca la ruta de tu imagen de logo -->
             </div>
-
-            <div class="contenedor__login-register">
-                <!-- Formulario de Login -->
-                <form action="php/login_usuario_be.php" method="POST" class="formulario__login">
-                    <h2>Iniciar Sesión</h2>
-                    <input type="text" placeholder="Correo electrónico" name="correo">
-                    <div class="contenedor_contrasena">
-                        <input type="password" placeholder="Contraseña" name="contrasena" id="contrasena_login">
-                        <span id="eye_icon_login" class="eye_icon fas fa-eye"></span>
-                    </div>
-                    <button>Entrar</button>
-                </form>
-
-                <!-- Formulario de Registro -->
-                <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
-                    <h2>Regístrarse</h2>
-                    <input type="text" placeholder="Nombre Completo" name="nombre_completo">
-                    <input type="email" placeholder="Correo electrónico" name="correo">
-                    <input type="text" placeholder="Usuario" name="usuario">
-                    <div class="contenedor_contrasena">
-                        <input type="password" placeholder="Contraseña" name="contrasena" id="contrasena_register">
-                        <span id="eye_icon_register" class="eye_icon fas fa-eye"></span>
-                    </div>
-                    <button>Registrarse</button>
-                </form>
-            </div>
+            <h1>HAVCANA</h1>
+        </a>
+        <!-- Menú -->
+        <div class="navbar-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-    </main>
+        <nav>
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">PRODUCTOS</a></li>
+                <li><a href="#">LICENCIAS Y PERMISOS</a></li>
+                <li><a href="#">CONTACTOS</a></li>
+                <li>
+                    <class class="perfil">
+                        <img src="assets/imagenes/perfil.png" alt="Perfil">
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <a href="php/../index.php"><?php echo $_SESSION['usuario']; ?></a>
+                        <?php else: ?>
+                            <a href="php/login_registro_global.php">INGRESAR</a>
+                        <?php endif; ?>
+                    </class>
+                </li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- Botón de contacto-->
+    <button class="contacto" onclick="window.location.href='pedidos.php'">
+        <img src="assets/imagenes/whatsapp.png" alt="WhatsApp">
+        PEDIDOS  |  CLICK AQUÍ
+    </button>
+    <script>
+        // Función para activar/desactivar el menú hamburguesa
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
 
-    <script src="assets/js/script.js"></script>
+    <div class="contenedor-grid">
+        <!-- Sección de categorías (rojo) -->
+         <aside class="categorias">
+            <h2>Productos</h2>
+            <ul>
+                <li><strong>Vinos</strong>
+                    <ul>
+                        <li>- Sabores</li>
+                        <li>- Tamaño</li>
+                        
+                    </ul>
+                </li>
+                <li><strong>Chocolates</strong>
+                    <ul>
+                        <li>- Ingredientes</li>
+                        <li>- Tamaños</li>
+                    </ul>
+                </li>
+                <li><strong>Jabones</strong>
+                    <ul>
+                        <li>- Fragancias</li>
+                    </ul>
+                </li>
+            </ul>
+         </aside>
+        <!-- Sección de productos (azul) -->
+         <section class="catalogo-imagen">
+        </section>
+        
+        <!-- Sección de contacto (naranja) -->
+        <section class="pro-ordenados">
+            <span>Total de productos: (0)</span>
+            <class class="seleccion">
+            <label for="ordenar">Ordenar por:</label>
+            <select id="ordenar">
+                <option value=""disabled selected>Seleccionar...</option>
+                <option value="a-z">De la A - Z</option>
+                <option value="z-a">De la Z - A</option>
+                <option value="barato-caro">Más barato - más caro</option>
+                <option value="caro-barato">Más caro - más barato</option>
+            </select>
+        </class>
+        </section>
+    </div>
+    <a href="php/cerrar_sesion.php">Cerrar Sesión</a>
 </body>
 </html>

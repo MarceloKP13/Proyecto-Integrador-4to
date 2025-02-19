@@ -1,0 +1,72 @@
+.categorias li strong {
+    font-size: 1.6rem;
+    margin-bottom: 10px; 
+}
+
+.categorias ul li {
+    font-size: 1.5rem;
+    margin-bottom: 10px; 
+}
+
+/*Contenedor principal*/
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    padding: 22px;
+}
+
+/*rojo*/
+.categorias {
+    grid-row: span 25;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+
+.categorias h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.categorias ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.categorias ul ul {
+    padding-left: 15px;
+}
+
+/*azul*/
+.catalogo-imagen {
+    background-image: url(../imagenes/fondo3.png);
+    background-size: cover; 
+    background-position: center; /* Corrige aquí */
+    margin-left: 85px;
+    margin-right: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 150px; /* Ajusta según sea necesario */
+    min-height: 150px; /* Ajusta según sea necesario */
+    border-radius: 20px;
+}
+.catalogo-imagen img {
+    width: 100px;
+}
+
+/*naranja*/
+.pro-ordenados {
+    margin-left: 85px;
+    margin-right: 85px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pro-ordenados select {
+    font-size: 16px;
+    border-radius: 10px;
+}

@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(../imagenes/fondoselva1.webp);
+    background-image: url(../imagenes/deg3.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -34,7 +34,8 @@ main {
     display: flex;
     justify-content: center;
     backdrop-filter: blur(10px);
-    background-color: rgba(202, 161, 226, 0.7);
+    background-color: rgba(102,0,48,0.3);
+    border-radius: 20px;
 }
 
 .caja__trasera div {
@@ -96,7 +97,7 @@ main {
     color: #353030;
 }
 
-.contenedor__login-register form input{
+.contenedor__login-register form input {
     width: 100%;
     margin-top: 20px;
     padding: 10px;
@@ -104,6 +105,7 @@ main {
     background: #f2f2f2;
     font-size: 16px;
     outline: none;
+    display: block; /* Asegura que no afecte otros elementos */
 }
 
 .contenedor__login-register form button{
@@ -144,33 +146,20 @@ main {
     color: #a36dc2e5;
 }
 
-/*Adaptable para dispositivos móviles*/
+.admin_check_container {
+    display: flex;
+    margin-top: 5px;
 
-@media screen and (max-width: 850px) {
-    main{
-        margin-top: 50px;
-    }
-    .caja__trasera{
-        max-width: 350px;
-        height: 300px;
-        flex-direction: column;
-        margin: auto;
-    }
+}
 
-    .caja__trasera div{
-        margin: 0;
-        position: absolute;
-    }
+.admin_check_container label {
+    color: #353030;
+}
+.admin_check_container {
+    display: flex;
+    margin-right: 200px;
+}
 
-    /*Formulario*/
-
-    .contenedor__login-register{
-        top: -10px;
-        left: -5px;
-        margin: auto;
-    }
-
-    .contenedor__login-register form{
-        position: relative;
-    }
+#admin_pin_div {
+    margin-top: 0;
 }
