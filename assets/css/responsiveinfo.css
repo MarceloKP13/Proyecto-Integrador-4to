@@ -1,0 +1,100 @@
+@media screen and (max-width: 850px) {
+    main{
+        margin-top: 50px;
+    }
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin: 0;
+        position: absolute;
+    }
+
+    /*Formulario*/
+
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
+    }
+}
+
+@media (max-width: 800px) {
+    button.contacto {
+        left: 0px; /* Espacio reducido desde el borde izquierdo */
+        bottom: 10px; /* Espacio reducido desde el borde inferior */
+        padding: 10px 15px; /* Ajustar el padding */
+        font-size: 14px; /* Fuente más pequeña */
+    }
+
+    button.contacto img {
+        width: 25px;
+        height: 25px;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    header .logo h1 {
+        font-size: 25px;
+    }
+
+    /* Ocultar enlaces del nav en pantallas pequeñas */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        background-color: #660030;
+    }
+
+    nav.active ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Mostrar el menú cuando se activa el toggle */
+    nav.active ul {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 2000;
+    }
+    header .perfil img {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+}
+
+/* Media Queries para pantallas más pequeñas (móviles) */
+@media (max-width: 480px) {
+    button.contacto {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    button.contacto img {
+        width: 20px;
+        height: 20px;
+    }
+}

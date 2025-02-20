@@ -11,13 +11,14 @@ session_start();
     <link rel="stylesheet" href="assets/css/estilo-pagina.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
     <!-- Header con Logo y Barra de Navegación -->
     <header>
-        <a href="infohavcana.html" class="logo-link">
+        <a href="php/infohavcana.php" class="logo-link">
             <div class="logo">
-                <img src="assets/imagenes/havcanalogo.png" alt="Logo de HAVCANA"> <!-- Aquí coloca la ruta de tu imagen de logo -->
+                <img src="assets/imagenes/havcanalogo.png" alt="Logo de HAVCANA">
             </div>
             <h1>HAVCANA</h1>
         </a>
@@ -31,7 +32,7 @@ session_start();
             <ul>
                 <li><a href="#">INICIO</a></li>
                 <li><a href="#">PRODUCTOS</a></li>
-                <li><a href="#">LICENCIAS Y PERMISOS</a></li>
+                <li><a href="php/infohavcana.php">SOBRE NOSOTROS</a></li>
                 <li><a href="#">CONTACTOS</a></li>
                 <li>
                     <class class="perfil">
@@ -60,7 +61,7 @@ session_start();
     </script>
 
     <div class="contenedor-grid">
-        <!-- Sección de categorías (rojo) -->
+        <!-- Sección de categorías -->
          <aside class="categorias">
             <h2>Productos</h2>
             <ul>
@@ -84,11 +85,11 @@ session_start();
                 </li>
             </ul>
          </aside>
-        <!-- Sección de productos (azul) -->
+        <!-- Sección de productos -->
          <section class="catalogo-imagen">
         </section>
         
-        <!-- Sección de contacto (naranja) -->
+        <!-- Sección de contacto -->
         <section class="pro-ordenados">
             <span>Total de productos: (0)</span>
             <class class="seleccion">
@@ -104,5 +105,6 @@ session_start();
         </section>
     </div>
     <a href="php/cerrar_sesion.php">Cerrar Sesión</a>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

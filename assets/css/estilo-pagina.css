@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 /* Reset de márgenes y padding */
 * {
     margin: 0;
@@ -6,10 +8,10 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto', sans-serif;
     background-image: url(../imagenes/deg3.png);
     background-size: cover; 
-    color: #000000; 
+    color: #333 
 }
 
 header {

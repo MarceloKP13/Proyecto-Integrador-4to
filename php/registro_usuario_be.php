@@ -11,21 +11,18 @@ $adminPin = isset($_POST['admin_pin']) ? $_POST['admin_pin'] : null;
 
 if ($isAdmin) {
     if ($adminPin !== '858513') {
-        echo 'PIN de seguridad incorrecto. No puedes registrarte como administrador.';
+        echo '
+            <script>
+                alert("PIN de seguridad incorrecto. No puedes registrarte como administrador.");
+                window.location = "login_registro_global.php";
+            </script>
+        ';
         exit();
-    }else {
+    } else {
         $es_admin = 1;
     }
 } else {
     $es_admin = 0;
-}
-
-$query = "INSERT INTO usuarios (nombre_completo, correo, usuario, contrasena, es_admin) VALUES ('$nombre_completo', '$correo', '$usuario', '$contrasena', '$es_admin')";
-$result = mysqli_query($conexion, $query);
-if($result) {
-    echo 'Usuario registrado exitosamente.';
-} else {
-    echo 'Error al registrar el usuario.';
 }
 
 // Verificar que el correo no se repita
@@ -53,13 +50,16 @@ if (mysqli_num_rows($verificar_usuario) > 0) {
 }
 
 // Ejecutar la consulta de inserción
+$query = "INSERT INTO usuarios (nombre_completo, correo, usuario, contrasena, es_admin) VALUES ('$nombre_completo', '$correo', '$usuario', '$contrasena', '$es_admin')";
 $ejecutar = mysqli_query($conexion, $query);
 
 if ($ejecutar) {
+    session_start();
+    $_SESSION['usuario'] = $usuario; // Iniciar sesión automáticamente
     echo '
         <script>
             alert("Usuario registrado exitosamente.");
-            window.location = "login_registro_global.php";
+            window.location = "../index.php"; // Redirigir al index.php
         </script>
     ';
 } else {
