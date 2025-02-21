@@ -9,7 +9,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url(../imagenes/deg3.png);
-    background-size: cover; 
+    background-size: contain; 
     font-size: 50px; 
     color: #333; 
 }

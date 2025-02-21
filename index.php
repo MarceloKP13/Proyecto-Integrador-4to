@@ -30,10 +30,10 @@ session_start();
         </div>
         <nav>
             <ul>
-                <li><a href="#">INICIO</a></li>
+                <li><a href="index.php">INICIO</a></li>
                 <li><a href="#">PRODUCTOS</a></li>
                 <li><a href="php/infohavcana.php">SOBRE NOSOTROS</a></li>
-                <li><a href="#">CONTACTOS</a></li>
+                <li><a href="php/contactos.php">CONTACTOS</a></li>
                 <li>
                     <class class="perfil">
                         <img src="assets/imagenes/perfil.png" alt="Perfil">
@@ -48,9 +48,10 @@ session_start();
         </nav>
     </header> 
     <!-- Botón de contacto-->
-    <button class="contacto" onclick="window.location.href='pedidos.php'">
-        <img src="assets/imagenes/whatsapp.png" alt="WhatsApp">
-        PEDIDOS  |  CLICK AQUÍ
+    <button class="contacto" onclick="window.location.href='https://wa.me/+593989367154'">
+    <img src="assets/imagenes/whatsapp.png" alt="WhatsApp">
+    PEDIDOS | CLICK AQUÍ
+</button>
     </button>
     <script>
         // Función para activar/desactivar el menú hamburguesa

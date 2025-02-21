@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAVCANA</title>
+    <link rel="icon" href="../assets/imagenes/info.png">
+    <title>HAVCANA - Información</title>
     <link rel="stylesheet" href="../assets/css/infohavcana.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
@@ -28,7 +29,7 @@
                 <li><a href="../index.php">INICIO</a></li>
                 <li><a href="#">PRODUCTOS</a></li>
                 <li><a href="infohavcana.php">SOBRE NOSOTROS</a></li>
-                <li><a href="#">CONTACTOS</a></li>
+                <li><a href="contactos.php">CONTACTOS</a></li>
                 <li class="perfil">
                     <img src="../assets/imagenes/perfil.png" alt="Perfil">
                     <?php if (isset($_SESSION['usuario'])): ?>
@@ -41,10 +42,10 @@
         </nav>
     </header>
     <!-- Botón de contacto -->
-    <button class="contacto" onclick="window.location.href='pedidos.php'">
-        <img src="../assets/imagenes/whatsapp.png" alt="WhatsApp">
-        PEDIDOS | CLICK AQUÍ
-    </button>
+    <button class="contacto" onclick="window.location.href='https://wa.me/+593989367154'">
+    <img src="../assets/imagenes/whatsapp.png" alt="WhatsApp">
+    PEDIDOS | CLICK AQUÍ
+</button>
 
     <script>
         function toggleMenu() {
